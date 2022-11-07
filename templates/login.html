@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="../static/login.css">
+    <title>Booking.Gym</title>
+</head>
+<body style="background-color: rgb(220, 220, 220);">
+    
+	<nav class="navbar navbar-default  bg-dark navbar-dark fixed-top barra">
+        <h4 style="color: white;"><a class="navbar-brand" href="">Booking.Gym</a>Milano</h4>
+    </nav>
+	
+	<div class="hero">
+        <div class="hero__content ">
+			<h4>Accedi con l'account della tua palestra</h4>
+            <form method="POST" action="/login">
+				<div class="form-group was-validated">
+					<label for="name">Nome:</label>
+					<input type="text" class="form-control" placeholder="Enter name" name="name" required>
+					<div class="valid-feedback">Valid.</div>
+					<div class="invalid-feedback">Please fill out this field.</div>
+				</div>
+				<div class="form-group was-validated">
+					<label for="surname">Cognome:</label>
+					<input type="text" class="form-control" placeholder="Enter surname" name="surname" required>
+					<div class="valid-feedback">Valid.</div>
+					<div class="invalid-feedback">Please fill out this field.</div>
+				</div>
+				<div class="form-group was-validated">
+					<label for="email">Email address:</label>
+					<input type="email" class="form-control" placeholder="Enter email" name="email" required>
+					<div class="valid-feedback">Valid.</div>
+					<div class="invalid-feedback">Please fill out this field.</div>
+				</div>
+				<div class="form-group was-validated">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" placeholder="Enter password" name="password" required>
+					<div class="valid-feedback">Valid.</div>
+					<div class="invalid-feedback">Please fill out this field.</div>
+				</div>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					{% for category, message in messages %}
+						<div class="messaggiflash alert alert-{{category}}">{{message}}</div>
+					{% endfor %}
+				{% endif %}
+				{% endwith %}
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+        </div>
+    </div>	
+	
+</body>
+</html>

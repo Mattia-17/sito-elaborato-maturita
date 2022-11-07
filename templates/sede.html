@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="../static/prenotazione.css">
+    <title>Booking.Gym</title>
+</head>
+<body style="background-color: rgb(220, 220, 220);">
+
+	<nav class="navbar navbar-default  bg-dark navbar-dark fixed-top barra">
+        <h4 style="color: white;"><a class="navbar-brand" href="">Booking.Gym</a>Milano</h4>
+    </nav>
+	
+	<div class="hero">
+        <div class="hero__content">
+            <form method="POST" action="/sede">
+			<h2>PRENOTAZIONE</h2> 
+            <h5>{{palestra}}</h5><br>
+            <div class="form-check">
+                <h4>Seleziona sede:</h4>
+                <label class="form-check-label" style="margin-left: 10px;">
+                  <input type="radio" class="form-check-input" name="optradio" value="{{sedi[0]}}" required>{{sedi[0]}}
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" value="{{sedi[1]}}" required>{{sedi[1]}}
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label" >
+                  <input type="radio" class="form-check-input" name="optradio" value="{{sedi[2]}}" required>{{sedi[2]}}
+                </label>
+            </div>
+            {% if sedi[3] %}
+                <div class="form-check">
+                    <label class="form-check-label" >
+                        <input type="radio" class="form-check-input" name="optradio" value="{{sedi[3]}}">{{sedi[3]}}
+                    </label>
+                </div>
+            {% endif %}
+            <br>
+            <button type="submit" class="btn btn-primary">Prenota</button>
+            </form>
+        </div>
+    </div>	
+</body>
+</html>

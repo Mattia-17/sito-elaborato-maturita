@@ -1,0 +1,36 @@
+.hero{
+	margin-top: 85px;
+	display: flex;
+	align-items: center;
+}
+
+.hero__content{
+	background-color: rgb(245, 245, 245);
+	text-align: center;
+	color: black;
+	margin-left: 25%;
+    width: 50%;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.form-control{
+	margin-left: 25%;
+	width: 50%;
+}
+ 
+@media (max-width: 760px){
+	.hero__content{
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 1400px){
+	.barra{
+        height: 60px;
+    }
+	.hero{
+		margin-top: 70px;
+	}
+}

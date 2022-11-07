@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="../static/prenotazione.css">
+    <title>Booking.Gym</title>
+</head>
+<body style="background-color: rgb(220, 220, 220);">
+	
+
+	<nav class="navbar navbar-default  bg-dark navbar-dark fixed-top barra">
+        <h4 style="color: white;"><a class="navbar-brand" href="">Booking.Gym</a>Milano</h4>
+    </nav>
+	
+	<div class="hero">
+        <div class="hero__content">
+            <form method="POST" action="/prenotazione">
+			<h2>PRENOTAZIONE</h2> <br>
+            <div class="form-check-inline">
+                <h4>Seleziona palestra:</h4>
+                <label class="form-check-label" style="margin-left: 10px;">
+                  <input type="radio" class="form-check-input" name="optradio" value="McFit" required>McFit
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" value="VirginActive" required>VirginActive
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" value="GetFit" required>GetFit
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" value="YouFit" required>YouFit
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" value="FitActive" required>FitActive
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="sel1"><h4>Seleziona l'orario:</h4></label>
+                <select class="form-control" name="sel1" required>
+                <option>8:00 - 9:00</option>
+                <option>9:00 - 10:00</option>
+                <option>10:00 - 11:00</option>
+                <option>11:00 - 12:00</option>
+                <option>14:00 - 15:00</option>
+                <option>15:00 - 16:00</option>
+                <option>16:00 - 17:00</option>
+                <option>17:00 - 18:00</option>
+                <option>18:00 - 19:00</option>
+                <option>19:00 - 20:00</option>
+                </select>
+            </div>
+
+            <div class="col-8" style="margin-left: 15%;">
+                <input class="form-control" type="date" id="calendario" name="calendario" required>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="messaggiflash alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <button type="submit" class="btn btn-primary">Prenota</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
